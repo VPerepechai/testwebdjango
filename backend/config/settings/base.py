@@ -16,7 +16,7 @@ STATIC_DIR = BASE_DIR.parent
 sys.path.insert(0, os.path.join(BASE_DIR, "apps"))
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-9px!jr+t^*ze*$_n8uy6jkl#^=0ms9a4@lw6_jm&2u2)103s&v'
+SECRET_KEY = os.environ.get('SECRET_KEY','django-insecure-9px!jr+t^*ze*$_n8uy6jkl#^=0ms9a4@lw6_jm&2u2)103s&v')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -50,7 +50,8 @@ THIRD_PARTY = [
 
 LOCAL_APPS = [
     'users',
-    'posts'
+    'posts',
+    'videos'
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY + LOCAL_APPS
